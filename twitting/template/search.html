@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<title>twitterBuird</title>
+</head>
+<html>
+	<body>
+		<form method='GET' action='../search/' enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>
+						query
+					</td>
+					<td>
+						<input type='text' name='q'required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						count(1-100 range optional)
+					</td>
+					<td>
+						<input type='text' name='count'>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						until(formate YYYY-MM-DD optional)
+					</td>
+					<td>
+						<input type='text' name='until'>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						result type
+					</td>
+					<td>	
+						<select name="result_type">
+							<option value="mixed">mixed</option>
+							<option value="recent">recent</option>
+							<option value="popular">popular</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input type='submit' value='search'/>
+		</form>
+		<div>
+			{%ifequal numWords None %}
+			{% else %}
+				number of words:{{ numWords }}<br/>
+				number of twits:{{ numTwits }}<br/>
+				number of data in database:{{ numInDb }}<br/>
+				total number of words in database: {{total_numb_words }} <br/>
+				number of Links:{{ numLink }}<br/>
+			{% endifequal %}
+		</div>
+	</body>
+</html> 

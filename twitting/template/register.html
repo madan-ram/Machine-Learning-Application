@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+	<title>twitterBuird</title>
+</head>
+<html>
+	<body>
+	<script type="text/javascript">
+			function regPopUp () {
+				document.getElementById('reg_form').innerHTML=
+						"<form method='GET' enctype='multipart/form-data' action='../validate/'>PIN Number:<input type='text' name='PIN'/><input type='submit' value='verify'/></form>";
+					window.open('{{ oauth_req_url }}','','width=700,height=500,resizable=false,left=0,top=0');
+					return false;
+			}
+		</script>
+
+		<div id="reg_form">
+			<button id="reg_button" onclick="regPopUp();">Register to twitter</button>
+		</div>
+	</body>
+</html> 
